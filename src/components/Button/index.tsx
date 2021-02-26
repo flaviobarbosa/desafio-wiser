@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+interface ButtonProps {
+  click: () => void;
+}
+
 const StyledButton = styled.div`
   width: 168px;
   height: 48px;
@@ -43,6 +47,8 @@ const StyledButton = styled.div`
   }
 `;
 
-const Button: React.FC = ({ children }) => <StyledButton>{children}</StyledButton>;
+const Button: React.FC<ButtonProps> = ({ children, click }) => (
+  <StyledButton onClick={click}>{children}</StyledButton>
+);
 
 export default Button;
