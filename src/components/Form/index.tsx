@@ -25,7 +25,7 @@ const Form: React.FC = () => {
     }
     const login = { email, password };
 
-    api.post('/login?delay=3', login).then(success).catch(failed);
+    api.post('/login', login).then(success).catch(failed);
   };
 
   const success = () => {
